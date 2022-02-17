@@ -1,1 +1,50 @@
+DATA BASE ASSESSEMENT REPORT.
 
+Name of the database: SoccerPlatform
+
+Description: This database is a useful tool to store data of a soccer platform. It can be used by soccer teams to facilitate and upgrade the management of the team, also to get all informations about the players, games and managers.
+We have 5 entities that are interconnected to each other to get all informations needed, all that with respecting the 3NF requirements.
+
+- List of entities ans attributes:
+
+team
+
+- team_id (PK)
+- team_name
+
+
+game
+
+- game_id (PK)
+- gama_date
+- game_time
+- game_location
+
+
+teamGame
+
+- team_id (FK,PK)
+- team_name (FK,PK)
+
+
+player
+
+- player_id (PK)
+- player_name
+- player_salary
+- team_id (FK)
+
+
+manager
+
+- manager_id (PK)
+- manager_name
+- manager_salary
+- team_id (FK)
+
+As we can see from the informations above, we have a solid foundation for building our database.
+
+Our ERD design respects the 3NF:
+- It is 1NF: because each entity has a primary key, and each attribute will store exactly one value.
+- It is 2NF: because the only entity with a composite key is teamGame, and this entity does not includes a 				non-key attribute at all.
+- It is 3NF: because each attribute describes only the entity it is in and depends on the primary key of that entity.
